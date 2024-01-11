@@ -1,7 +1,10 @@
 export function updateCityInStorage(city){
     if (!city) return;
 
-    const cityList = localStorage.getItem('recent') || "";
+    if (typeof window === undefined){
+        return;
+    }
+    const cityList = window.localStorage.getItem('recent') || "";
     const recentCityArr = cityList.split("+").filter((it) => it != "")
 
     if (recentCityArr.findIndex((it) => it === city) !== -1) return;
@@ -11,7 +14,10 @@ export function updateCityInStorage(city){
 }
 
 export function getRecentSearchCity() {
-    const recentCity = localStorage.getItem('recent') || "";
+    if (typeof window === 'undefined') {
+        return;
+    }
+    const recentCity = window.localStorage.getItem('recent') || "";
     const recentCityArr = recentCity.split("+").filter((it) => it != "")
     recentCityArr.reverse();
     return recentCityArr;
