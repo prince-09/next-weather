@@ -7,7 +7,7 @@ function WeatherCard({ current, location }) {
     const isDayOrNight = current?.is_day === 0 ? 'Night' : 'Day';
 
     return (
-        <div className="flex flex-col items-center w-full md:w-1/2 bg-black px-4 py-10 md:mt-5 rounded rounded-lg">
+        <div className="flex flex-col items-center w-full md:w-1/2 bg-emerald-900 shadow px-4 py-10 md:mt-5 rounded rounded-lg">
             <div className="flex flex-row gap-4">
                 <img src={`https://${weatherIcon}`} alt="sun" className="" />
                 <p className="text-white font-bold text-6xl">{current?.temp_c}° C</p>

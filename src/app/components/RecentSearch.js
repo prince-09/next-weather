@@ -9,7 +9,7 @@ function RecentSearch({ fetchWeather }) {
             {/* Reacent Search Card */}
             <p className="text-white font-medium text-4xl">Recently Searched</p>
             <div className="flex flex-col bg-black px-4 py-4 rounded rounded-lg w-full md:w-3/4 mt-5 gap-2">
-                {getCityList.map((item) => (
+                {getCityList?.map((item) => (
                     <div className="hover:bg-gray-600 bg-gray-800 p-2 rounded rounded-md cursor-pointer" onClick={() => fetchWeather(item)}>{item}</div>
                 ))}
             </div>
